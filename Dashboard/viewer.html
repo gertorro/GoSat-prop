@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>Viewer</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://masc.cs.gmu.edu/js/three.min.js"></script>
+	<script type="text/javascript" src="/static/js/G.js"></script>
+	<script type="text/javascript" src="/static/js/G.Viewer.js"></script>
+	<style>
+		div{
+		outline: none;
+		-webkit-tap-highlight-color: rgba(255, 255, 255, 0); /* mobile webkit */
+	
+		}
+		canvas{
+		outline: none;
+		-webkit-tap-highlight-color: rgba(255, 255, 255, 0); /* mobile webkit */
+		}
+		html, body{
+			overflow-y:hidden;
+		}
+		</style>
+	</head>
+	<body>
+		<script>
+				var viewer = new G.Viewer({url:'gosat.obj', width:300, height:150, dropable:0});	
+
+				function paint(x,y,z){
+					
+					viewer.meshes[0].rotation.x=x; 
+					viewer.meshes[0].rotation.y=y; 
+					viewer.meshes[0].rotation.z=z; 
+					
+					viewer.render();
+				}
+		</script>
+	</body>
+	
+</html>
